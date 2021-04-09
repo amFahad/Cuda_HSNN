@@ -1,8 +1,7 @@
 Hierarchical Networks With Subnetwork Nodes
-----------------------------
+--------------------------------------------
 
-
-Description: 
+Description:
 
  Iterative method of learning has become a paradigm for training hierarchical NNs. they have improved accuracies of objection recognition and have turned out to be very good at
 discovering intricate structures. however it is clear that the learning effectiveness and learning speed of these networks are far slower than required, which has been a
@@ -31,28 +30,27 @@ Main module & function:
  - lastlayer(): is the wrapper function used for final classification.
 
 Example usage:
- 
-  >>> T, P, TV_T, TV_P, repeat = loadata('Scene_15_train.csv','Scene_15_test.csv')
-  >>> NumberofHiddenNeurons=80
-  >>> C=128
-  >>> kkkk=2
-  >>> sn=3
-  >>> name='scene15_channel_'
-  >>> chnl=1
-  >>> load
-  >>> for i in range(chnl):
-  >>>   start_time = time.time()   
-  >>>   subnetwrork(P,T,TV_P,TV_T, NumberofHiddenNeurons, C, kkkk, sn, name, i+1)
-  >>>   print("Subspace Feature Extraction Time for channel_"+str(i+1)+" : ",time.time()-start_time,"\n")
-  >>>   start_time = time.time() 
-  >>>   Features = featurecomb(name, sn, chnl)
-  >>>   print("Combining Feature Time Taken : ",time.time()-start_time,"\n")
-  >>> Target = np.genfromtxt(name+str(chnl)+"target.csv", delimiter=',')
-  >>> C2=4096
-  >>> No_train = len(P[1])
-  >>> start_time = time.time()
-  >>> lastlayer(Features,Target,C2,No_train)
-  >>> print("Final Classification Time Taken : ",time.time()-start_time)
+>>> T, P, TV_T, TV_P, repeat = loadata('Scene_15_train.csv','Scene_15_test.csv')
+>>> NumberofHiddenNeurons=80
+>>> C=128
+>>> kkkk=2
+>>> sn=3
+>>> name='scene15_channel_'
+>>> chnl=1
+>>> load
+>>> for i in range(chnl):
+>>>   start_time = time.time()   
+>>>   subnetwrork(P,T,TV_P,TV_T, NumberofHiddenNeurons, C, kkkk, sn, name, i+1)
+>>>   print("Subspace Feature Extraction Time for channel_"+str(i+1)+" : ",time.time()-start_time,"\n") 
+>>>   start_time = time.time() 
+>>>   Features = featurecomb(name, sn, chnl)
+>>>   print("Combining Feature Time Taken : ",time.time()-start_time,"\n")
+>>> Target = np.genfromtxt(name+str(chnl)+"target.csv", delimiter=',')
+>>> C2=4096
+>>> No_train = len(P[1])
+>>> start_time = time.time()
+>>> lastlayer(Features,Target,C2,No_train)
+>>> print("Final Classification Time Taken : ",time.time()-start_time)
   
 Authors & Acknowledgements:
  
